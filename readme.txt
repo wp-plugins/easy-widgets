@@ -50,6 +50,17 @@ Easy Widgets plugin provides an API to easily add widgets in WordPress.
 					'name' => 'Body',
 					'id' => 'body',
 					'type' => 'textarea'
+				),
+
+				array(
+					'name' => 'Category',
+					'id' => 'category',
+					'type' => 'select',
+					'options' => array(
+						'one',
+						'two',
+						'three'
+					)
 				)
 			),
 
@@ -57,6 +68,7 @@ Easy Widgets plugin provides an API to easily add widgets in WordPress.
 			'output' => '
 				<article class="easyBox">
 					<h1><?=$title?></h1>
+					<small><?=$category?></small>
 					<p><?=$body?></p>
 				</article>
 			'
