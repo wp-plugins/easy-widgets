@@ -97,7 +97,7 @@ Easy Widgets plugin provides an API to easily add widgets in WordPress.
 = Supported Field Types =
 
 * text
-* textrea
+* textarea
 * checkbox
 * select
 
