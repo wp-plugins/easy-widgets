@@ -19,62 +19,62 @@ Easy Widgets plugin provides an API to easily add widgets in WordPress.
 1. In functions.php use locate_template to include your widgets.php file: locate_template(array('/inc/widgets.php'), true);
 1. In widgets.php, do something like below:
 
-	/**
-	 * Custom widgets.
-	 */
-	global $widgets;
+			/**
+			 * Custom widgets.
+			 */
+			global $widgets;
 
-	$prefix = 'replaceMe_';
-	$widgets = array();
+			$prefix = 'replaceMe_';
+			$widgets = array();
 
-	// -----------------------------------------------
+			// -----------------------------------------------
 
-	/**
-	 * easyBox widget
-	 */
-	$widgets[] = array(
-		'id' => 'easyBox',
-		'title' => $prefix.'easyBox',
-		'desc' => 'Create a simple text widget',
+			/**
+			 * easyBox widget
+			 */
+			$widgets[] = array(
+				'id' => 'easyBox',
+				'title' => $prefix.'easyBox',
+				'desc' => 'Create a simple text widget',
 
-		// All fields can be called by their
-		// simple variables: title => $title
-		'fields' => array(
-			array(
-				'name' => 'Title',
-				'id' => 'title',
-				'type' => 'text'
-			),
+				// All fields can be called by their
+				// simple variables: title => $title
+				'fields' => array(
+					array(
+						'name' => 'Title',
+						'id' => 'title',
+						'type' => 'text'
+					),
 
-			array(
-				'name' => 'Body',
-				'id' => 'body',
-				'type' => 'textarea'
-			)
-		),
+					array(
+						'name' => 'Body',
+						'id' => 'body',
+						'type' => 'textarea'
+					)
+				),
 
-		// This is what will appear in the sidebar as HTML
-		'output' => '
-			<article class="easyBox">
-				<h1><?=$title?></h1>
-				<p><?=$body?></p>
-			</article>
-		'
-	);
+				// This is what will appear in the sidebar as HTML
+				'output' => '
+					<article class="easyBox">
+						<h1><?=$title?></h1>
+						<p><?=$body?></p>
+					</article>
+				'
+			);
 
-	// -----------------------------------------------
+			// -----------------------------------------------
 
-	/**
-	 * Iterate and register the widgets
-	 */
-	if (class_exists('WidgetCreator')) {
-		foreach ($widgets AS &$w) {
-			$WC = new WidgetCreator($w);
-			eval($WC->render());
-		}
-	}
+			/**
+			 * Iterate and register the widgets
+			 */
+			if (class_exists('WidgetCreator')) {
+				foreach ($widgets AS &$w) {
+					$WC = new WidgetCreator($w);
+					eval($WC->render());
+				}
+			}
 
-	else wp_die('WidgetCreator does not exist.');
+			else wp_die('WidgetCreator does not exist.');
 
 = Features =
 
