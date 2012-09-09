@@ -5,7 +5,7 @@
  * Version: 1.0
  * Author: Talasan Nicholson
  * Author URI: http://www.nicholsonws.com/
- * Plugin URI: #
+ * Plugin URI: http://wordpress.org/extend/plugins/easy-widgets/
  */
 
 // -----------------------------------------------
