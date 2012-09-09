@@ -13,7 +13,7 @@ Easy Widgets plugin lets you easily create widgets in WordPress.
 
 Easy Widgets plugin provides an API to easily add widgets in WordPress.
 
-== Features ==
+= Features =
 
 * Easily create custom widgets to use on your website.
 * Lets you control the output of the widget.
@@ -40,7 +40,7 @@ More to come soon, as it seems necessary. You may request new fields.
 This pushes the widget to the top of the widgets list, allowing your custom widgets to come first.
 
 = Can I use HTML? =
-Yes, you may use: <a><b><strong><u><i><em><iframe>
+Yes, you may use basic tags such as bold, italicize, iframe, img and anchor links.
 
 == Changelog ==
 = 1.0 =
