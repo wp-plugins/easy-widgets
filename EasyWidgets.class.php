@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Easy Widgets
  * Description: Easily allows you to create dynamic WordPress Widgets
- * Version: 1.0
+ * Version: 1.1
  * Author: Talasan Nicholson
  * Author URI: http://www.nicholsonws.com/
  * Plugin URI: http://wordpress.org/extend/plugins/easy-widgets/
@@ -55,21 +55,39 @@ class WidgetCreator {
 			class="widefat"
 			id="'.\$this->get_field_id("$id").'" 
 			name="'.\$this->get_field_name("$id").'" 
+S;
+			$value = <<<S
 			value="'.htmlentities(\$instance["$id"]).'" 
 S;
 
 			// Print out different field types
 			switch ($type) {
+				# input[type=text]
 				case 'text':
-					$tmp .= '<input type="text" '.$meta.'" />';
+					$tmp .= "<input type=\"text\" $meta $value />";
 				break;
 
+				# textarea
 				case 'textarea':
 					$tmp .= "<textarea $meta>'.htmlentities(\$instance['$id']).'</textarea>";
 				break;
 
+				# input[type=checkbox]
 				case 'checkbox':
-					$tmp .= '<input type="checkbox" '.$meta.'" />';
+					$tmp .= "<input type=\"checkbox\" $meta />";
+				break;
+
+				# select
+				case 'select':
+					$tmp .= "<select $meta>";
+
+					foreach ($options AS &$option) {
+						$tmp .= <<<S
+						<option '.selected(\$instance['$id'], $option).'>$option</option>
+S;
+					}
+
+					$tmp .= '</select>';
 				break;
 			}
 		}

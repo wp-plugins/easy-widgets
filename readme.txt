@@ -105,5 +105,9 @@ This pushes the widget to the top of the widgets list, allowing your custom widg
 Yes, you may use basic tags such as bold, italicize, iframe, img and anchor links.
 
 == Changelog ==
+= 1.1 =
+* Added select support
+* Streamlined some string concatenation
+
 = 1.0 =
 * Listed on WP.
