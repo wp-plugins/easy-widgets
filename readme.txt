@@ -22,8 +22,7 @@ Easy Widgets plugin provides an API to easily add widgets in WordPress.
 		/**
 		 * Custom widgets.
 		 */
-		global $widgets;
-
+		
 		$prefix = 'replaceMe_';
 		$widgets = array();
 
@@ -86,7 +85,7 @@ Easy Widgets plugin provides an API to easily add widgets in WordPress.
 			}
 		}
 
-		else wp_die('WidgetCreator does not exist.');
+		else trigger_error('WidgetCreator does not exist.', E_USER_ERROR);
 
 = Features =
 
