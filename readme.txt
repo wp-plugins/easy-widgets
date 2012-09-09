@@ -86,7 +86,7 @@ Easy Widgets plugin provides an API to easily add widgets in WordPress.
 * text
 * textrea
 * checkbox
-* select - soon to come
+* select
 
 More to come soon, as it seems necessary. You may request new fields. 
 
