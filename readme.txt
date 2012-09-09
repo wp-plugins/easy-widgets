@@ -22,8 +22,7 @@ Easy Widgets plugin provides an API to easily add widgets in WordPress.
 		/**
 		 * Custom widgets.
 		 */
-		global $widgets;
-
+		
 		$prefix = 'replaceMe_';
 		$widgets = array();
 
@@ -50,6 +49,17 @@ Easy Widgets plugin provides an API to easily add widgets in WordPress.
 					'name' => 'Body',
 					'id' => 'body',
 					'type' => 'textarea'
+				),
+
+				array(
+					'name' => 'Category',
+					'id' => 'category',
+					'type' => 'select',
+					'options' => array(
+						'one',
+						'two',
+						'three'
+					)
 				)
 			),
 
@@ -57,6 +67,7 @@ Easy Widgets plugin provides an API to easily add widgets in WordPress.
 			'output' => '
 				<article class="easyBox">
 					<h1><?=$title?></h1>
+					<small><?=$category?></small>
 					<p><?=$body?></p>
 				</article>
 			'
@@ -74,7 +85,7 @@ Easy Widgets plugin provides an API to easily add widgets in WordPress.
 			}
 		}
 
-		else wp_die('WidgetCreator does not exist.');
+		else trigger_error('WidgetCreator does not exist.', E_USER_ERROR);
 
 = Features =
 
@@ -85,7 +96,7 @@ Easy Widgets plugin provides an API to easily add widgets in WordPress.
 = Supported Field Types =
 
 * text
-* textrea
+* textarea
 * checkbox
 * select
 
@@ -103,7 +114,7 @@ More to come soon, as it seems necessary. You may request new fields.
 This pushes the widget to the top of the widgets list, allowing your custom widgets to come first.
 
 = Can I use HTML? =
-Yes, you may use basic tags such as bold, italicize, iframe, img and anchor links.
+Yes, you may use basic tags: strong, b, i, a, u, s, br, p, img, and iframe.
 
 == Changelog ==
 = 1.1 =
