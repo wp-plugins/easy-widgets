@@ -1,9 +1,8 @@
 === Easy Widgets ===
 Contributors: OutThisLife
-Tags: widgets
+Tags: widgets, custom widgets, dynamic widgets
 Requires at least: 3.0
 Tested up to: 3.4.2
-Stable tag: 1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -82,7 +81,7 @@ Easy Widgets plugin provides an API to easily add widgets in WordPress.
 * Lets you control the output of the widget.
 * Flawlessly integrates itself into your themes.
 
-<strong>Supported Field Types</strong>
+= Supported Field Types =
 
 * text
 * textrea
