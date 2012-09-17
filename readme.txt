@@ -115,6 +115,7 @@ This pushes the widget to the top of the widgets list, allowing your custom widg
 
 = Can I use HTML? =
 Yes, you may use basic tags:
+		
 		<strong><b><i><a><u><s><br><p><img><iframe><ul><li><ol><em>
 
 == Changelog ==
