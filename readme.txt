@@ -114,7 +114,8 @@ More to come soon, as it seems necessary. You may request new fields.
 This pushes the widget to the top of the widgets list, allowing your custom widgets to come first.
 
 = Can I use HTML? =
-Yes, you may use basic tags: strong, b, i, a, u, s, br, p, img, and iframe.
+Yes, you may use basic tags:
+		<strong><b><i><a><u><s><br><p><img><iframe><ul><li><ol><em>
 
 == Changelog ==
 = 1.1 =
