@@ -104,7 +104,7 @@ S;
 
 		foreach ($this->data['fields'] AS &$r) {
 			$id = $r['id'];
-			$tmp .= "\$instance[$id] = strip_tags(\$new_instance[$id], '<strong><b><i><a><u><s><br><p><img><iframe>');";
+			$tmp .= "\$instance[$id] = strip_tags(\$new_instance[$id], '<strong><b><i><a><u><s><br><p><img><iframe><ul><li><ol><em>');";
 		}
 
 		return $tmp;
