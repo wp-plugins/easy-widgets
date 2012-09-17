@@ -48,16 +48,16 @@ class WidgetCreator {
 			extract($r);
 
 			// Build the label
-			$tmp .= "<p><label for=\"'.\$this->get_field_id(\"$id\").'\">$name</label>";
+			$tmp .= "<p><label for=\"<?=\$this->get_field_id(\"$id\")?>\">$name</label>";
 
 			// Common meta information per field
 			$meta = <<<S
 			class="widefat"
-			id="'.\$this->get_field_id("$id").'" 
-			name="'.\$this->get_field_name("$id").'" 
+			id="<?=\$this->get_field_id("$id")?>" 
+			name="<?=\$this->get_field_name("$id")?>" 
 S;
 			$value = <<<S
-			value="'.htmlentities(\$instance["$id"]).'" 
+			value="<?=htmlentities(\$instance["$id"])?>" 
 S;
 
 			// Print out different field types
@@ -69,7 +69,7 @@ S;
 
 				# textarea
 				case 'textarea':
-					$tmp .= "<textarea $meta>'.htmlentities(\$instance['$id']).'</textarea>";
+					$tmp .= "<textarea $meta><?=htmlentities(\$instance['$id'])?></textarea>";
 				break;
 
 				# input[type=checkbox]
@@ -83,7 +83,7 @@ S;
 
 					foreach ($options AS &$option) {
 						$tmp .= <<<S
-						<option '.selected(\$instance['$id'], $option).'>$option</option>
+						<option <?php selected(\$instance['$id'], '$option') ?>>$option</option>
 S;
 					}
 
@@ -104,7 +104,7 @@ S;
 
 		foreach ($this->data['fields'] AS &$r) {
 			$id = $r['id'];
-			$tmp .= "\$instance[$id] = strip_tags(\$new_instance[$id], '<strong><b><i><a><u><s><br><p><img><iframe><ul><li><ol><em>');";
+			$tmp .= "\$instance['$id'] = strip_tags(\$new_instance['$id'], \"<strong><b><i><a><u><s><br><p><img><iframe><ul><li><ol><em>\");";
 		}
 
 		return $tmp;
@@ -156,7 +156,7 @@ S;
 
 					\$instance = wp_parse_args(\$instance, \$defaults);
 
-					echo '$this->forms';
+					?>$this->forms<?php
 				}
 			}
 
