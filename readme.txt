@@ -118,6 +118,9 @@ Yes, you may use basic tags:
 		<strong><b><i><a><u><s><br><p><img><iframe><ul><li><ol><em>
 
 == Changelog ==
+= 1.1.1 =
+* Added a few new HTML tags
+
 = 1.1 =
 * Added select support
 * Streamlined some string concatenation
